@@ -11,7 +11,9 @@
         <div class='tobuys'>
             @foreach ($tobuys as $tobuy)
             <div class='tobuy'>
-                <h2 class='tobuy'>{{ $tobuy->tobuy }}</h2>
+                <h2 class='tobuy'>
+                <a href="/tobuys/{{ $tobuy->id }}">{{ $tobuy->tobuy }}</a>
+                </h2>
                 <p class='deadline'>{{ $tobuy->deadline }}</p>
                 <p class='group_id'>{{ $tobuy->group_id }}</p>
             @endforeach
