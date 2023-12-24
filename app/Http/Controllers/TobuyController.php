@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illiminate\Http\Tobuy;
+use App\Models\Tobuy;
 
 class TobuyController extends Controller
 {
     public function index(Tobuy $tobuy)
     {
-        return $tobuy->get();
+        return view('tobuys/index')->with(['tobuys' => $tobuy->get()]);
     }
 }
