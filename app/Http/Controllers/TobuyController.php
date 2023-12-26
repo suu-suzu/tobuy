@@ -21,4 +21,14 @@ class TobuyController extends Controller
     {
         return view('tobuys.create');
     }
+    
+    public function store(Request $request, Tobuy $tobuy)
+    {
+        $input = $request['tobuy'];
+        $tobuy = new Tobuy();
+        $tobuy->group_id = 1;
+        $tobuy->fill($input);
+        $tobuy->save();
+        return redirect('/');
+    }
 }
