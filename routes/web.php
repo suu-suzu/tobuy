@@ -14,9 +14,9 @@ use App\Http\Controllers\TobuyController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+   
 
-Route::get('/tobuys', [TobuyController::class, 'index']);
+Route::get('/', [TobuyController::class, 'index']);
+Route::get('tobuys/create', [TobuyController::class, 'create']);
 Route::get('tobuys/{tobuy}', [TobuyController::class, 'show']);
+Route::post('/tobuys', [TobuyController::class, 'store']);

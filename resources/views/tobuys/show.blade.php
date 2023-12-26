@@ -25,7 +25,7 @@
             <p>{{ $tobuy->memo }}</p>
         </div>
         <div class="footer">
-            <a href="/tobuys">戻る</a>
+            <a href="/">戻る</a>
         </div>
     </body>
 </html>

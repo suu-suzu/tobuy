@@ -17,6 +17,7 @@
                 <p class='deadline'>{{ $tobuy->deadline }}</p>
                 <p class='group_id'>{{ $tobuy->group_id }}</p>
             @endforeach
+            <a href='/tobuys/create'>追加</a>
             </div>
         </div>
     </body>
