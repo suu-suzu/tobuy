@@ -19,4 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/tobuys', [TobuyController::class, 'index']);
+Route::get('tobuys/create', [TobuyController::class, 'create']);
 Route::get('tobuys/{tobuy}', [TobuyController::class, 'show']);

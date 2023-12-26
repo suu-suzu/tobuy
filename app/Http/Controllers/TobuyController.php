@@ -16,4 +16,9 @@ class TobuyController extends Controller
     {
         return view('tobuys.show')->with(['tobuy' => $tobuy]);
     }
+    
+    public function create()
+    {
+        return view('tobuys.create');
+    }
 }
