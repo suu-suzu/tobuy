@@ -12,7 +12,7 @@ class Tobuy extends Model
 protected $fillable = [
     'tobuy',
     'deadline',
-    'group',
+    'group_id',
     'memo'
 ];
 }

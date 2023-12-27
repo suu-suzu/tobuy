@@ -21,4 +21,4 @@ Route::get('tobuys/create', [TobuyController::class, 'create']);
 Route::get('tobuys/{tobuy}', [TobuyController::class, 'show']);
 Route::post('/tobuys', [TobuyController::class, 'store']);
 Route::get('/tobuys/{tobuy}/edit', [TobuyController::class, 'edit']);
-
+Route::put('/tobuys/{tobuy}', [TobuyController::class, 'update']);

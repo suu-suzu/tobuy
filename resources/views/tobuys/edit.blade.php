@@ -30,7 +30,10 @@
                     <input type='text' name='tobuy[memo]' value="{{ $tobuy->memo }}">
                 </div>
             <div class="footer">
-            <input type="submit" value="保存">
+            <input type="submit" value="更新">
+            <div class="footer">
+                <a href="/">戻る</a>
+            </div>
         </div>
     </body>
 </html>
