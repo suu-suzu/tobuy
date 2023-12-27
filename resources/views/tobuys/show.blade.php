@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1 class="title">tobuy詳細</h1>
+        <h1 class="title">to buy詳細</h1>
         <div class="tobuy">
             <h3>tobuy</h3>
             <p>{{ $tobuy->tobuy }}</p>

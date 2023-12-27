@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1 class='title'>tobuy編集</h1>
+        <h1 class='title'>to buy編集</h1>
         <div class='content'>
             <form action="/tobuys/{{ $tobuy->id }}" method="POST">
                 @csrf
