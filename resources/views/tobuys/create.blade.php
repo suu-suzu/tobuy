@@ -5,7 +5,7 @@
         <title>Tobuy</title>
     </head>
     <body>
-        <h1>リスト作成</h1>
+        <h1 class='title'>tobuyリスト作成</h1>
         <form action="/tobuys" method="POST">
             @csrf
             <div class="tobuy">

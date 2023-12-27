@@ -31,4 +31,17 @@ class TobuyController extends Controller
         $tobuy->save();
         return redirect('/');
     }
+    
+    public function edit(Tobuy $tobuy)
+    {
+        return view('tobuys.edit')->with(['tobuy' => $tobuy]);
+    }
+    
+    public function update(Request $request, Tobuy $tobuy)
+    {
+        $input_tobuy = $request['tobuy'];
+        $tobuy->fill($input_tobuy)->save();
+        
+        return redirect('/');
+    }
 }
