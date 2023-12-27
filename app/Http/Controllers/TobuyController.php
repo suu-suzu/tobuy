@@ -44,4 +44,10 @@ class TobuyController extends Controller
         
         return redirect('/');
     }
+    
+    public function delete(Tobuy $tobuy)
+    {
+        $tobuy->delete();
+        return redirect('/');
+    }
 }
