@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>tobuy 一覧</h1>
+        <h1 class='title'>tobuy一覧</h1>
         <div class='tobuys'>
             @foreach ($tobuys as $tobuy)
             <div class='tobuy'>
