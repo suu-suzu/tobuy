@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TobuyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::controller(TobuyController::class)->middleware(['auth'])->group(function(){
+    Route::get('/','index')->name('index');
+    Route::get('tobuys/create', 'create');
+    Route::get('tobuys/{tobuy}', 'show');
+    Route::post('/tobuys', 'store');
+    Route::get('/tobuys/{tobuy}/edit', 'edit');
+    Route::put('/tobuys/{tobuy}','update');
+    Route::delete('tobuys/{tobuy}', 'delete');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
