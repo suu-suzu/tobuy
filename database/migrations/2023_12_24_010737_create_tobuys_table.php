@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tobuys', function (Blueprint $table) {
             $table->id();
             $table->string('tobuy', 50);
-            $table->foreignId('group_id');
+            $table->foreignId('group_id')->constrained();
             $table->date('deadline');
             $table->string('memo', 200)->nullable();
             $table->timestamps();

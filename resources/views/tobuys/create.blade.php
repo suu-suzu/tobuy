@@ -20,10 +20,10 @@
                     <h2>期限</h2>
                     <input type="date" name="tobuy[deadline]"/>
                 </div>
-                <!--<div class="group">-->
-                <!--    <h2>グループ</h2>-->
-                <!--    <input type="select" name="tobuy[group]" placeholder="グループ１"/>-->
-                <!--</div>-->
+                <div class="group">
+                    <h2>グループ</h2>
+                    <input type="select" name="tobuy[group_id]" placeholder="グループ１"/>
+                </div>
                 <div class="memo">
                     <h2>メモ</h2>
                     <textarea name="tobuy[memo]" placeholder="メモ"></textarea>
