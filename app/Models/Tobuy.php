@@ -11,6 +11,11 @@ class Tobuy extends Model
     use HasFactory;
     use SoftDeletes;
     
+public function groups()
+{
+    return $this->belongsTo(Group::class);
+}
+    
 protected $fillable = [
     'tobuy',
     'deadline',
