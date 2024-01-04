@@ -11,10 +11,10 @@ class Tobuy extends Model
     use HasFactory;
     use SoftDeletes;
     
+
 public function group()
 {
     return $this->belongsTo(Group::class);
-}
     
 protected $fillable = [
     'tobuy',
