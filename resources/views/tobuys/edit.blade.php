@@ -12,7 +12,6 @@
             to buy編集
         </x-slot>
         <body>
-            <h1 class='title'>to buy編集</h1>
             <div class='content'>
                 <form action="/tobuys/{{ $tobuy->id }}" method="POST">
                     @csrf

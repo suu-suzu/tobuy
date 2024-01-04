@@ -9,7 +9,6 @@
             to buyリスト作成
         </x-slot>
         <body>
-            <h1 class='title'>to buyリスト作成</h1>
             <form action="/tobuys" method="POST">
                 @csrf
                 <div class="tobuy">

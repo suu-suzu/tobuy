@@ -11,15 +11,13 @@
             to buy一覧
         </x-slot>
         <body>
-            <h1 class='title'>to buy一覧</h1>
             <div class='tobuys'>
                 @foreach ($tobuys as $tobuy)
                 <div class='tobuy'>
                     <h2 class='tobuy'>
                     <a href="/tobuys/{{ $tobuy->id }}">{{ $tobuy->tobuy }}</a>
                     </h2>
-                    <p class='deadline'>{{ $tobuy->deadline }}</p>
-                    <p class='group_id'>{{ $tobuy->group_id }}</p>
+                    <p class='group_id'>{{ $tobuy->group->name }}</p>
                     <form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
                         @csrf
                         @method('DELETE')

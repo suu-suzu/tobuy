@@ -12,7 +12,6 @@
             to buy詳細
         </x-slot>
         <body>
-            <h1 class="title">to buy詳細</h1>
             <div class="tobuy">
                 <h3>tobuy</h3>
                 <p>{{ $tobuy->tobuy }}</p>
@@ -23,7 +22,7 @@
             </div>
             <div class="group">
                 <h3>グループ</h3>
-                <p>{{ $tobuy->group_id }}</p>
+                <p>{{ $tobuy->group->name }}</p>
             </div>
             <div class="memo">
                 <h3>メモ</h3>
