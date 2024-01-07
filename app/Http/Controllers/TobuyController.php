@@ -9,16 +9,14 @@ class TobuyController extends Controller
 {
     public function index(Tobuy $tobuy)
     {
-
-        $tobuys = Tobuy::with('group')->get();
+        $tobuys = Tobuy::with('group')->paginate(5);
         return view('tobuys.index',compact('tobuys'));
 
     }
     
     public function show(Tobuy $tobuy)
     {
-
-        $tobuy = Tobuy::with('group')->get();
+        $tobuys = Tobuy::with('group')->get();
         return view('tobuys.show')->with(['tobuy' => $tobuy]);
     }
     

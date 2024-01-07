@@ -11,11 +11,17 @@ class Tobuy extends Model
     use HasFactory;
     use SoftDeletes;
     
+public function getPaginateByLimit(int $limit_count = 5)
+{
+    return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+}
+
 
 public function group()
 {
     return $this->belongsTo(Group::class);
-    
+}
+
 protected $fillable = [
     'tobuy',
     'deadline',
