@@ -25,6 +25,9 @@
                     </form>
                 @endforeach
                 <a href='/tobuys/create'>追加</a>
+                <div class='paginate'>
+                    {{ $tobuys->links() }}
+                </div>
                 <script>
                     function deleteTobuy(id) {
                         'use strict'
