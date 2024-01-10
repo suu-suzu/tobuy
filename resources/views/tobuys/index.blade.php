@@ -18,6 +18,7 @@
                     <a href="/tobuys/{{ $tobuy->id }}">{{ $tobuy->tobuy }}</a>
                     </h2>
                     <p class='group_id'>{{ $tobuy->group->name }}</p>
+                    <p class='deadline'>{{ $tobuy->deadline }}</p>
                     <form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
                         @csrf
                         @method('DELETE')
@@ -28,6 +29,7 @@
                 <div class='paginate'>
                     {{ $tobuys->links() }}
                 </div>
+                <a href="/chat/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}とチャットする</a>
                 <script>
                     function deleteTobuy(id) {
                         'use strict'
