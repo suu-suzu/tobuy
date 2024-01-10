@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     {
        $this->call(TobuySeeder::class);
        $this->call(GroupSeeder::class);
+       $this->call(ChatSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
