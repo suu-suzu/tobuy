@@ -8,34 +8,46 @@ use App\Models\Room;
 use App\Models\User;
 use App\Models\Group;
 use App\Events\MessageSent;
+use App\Library\Message;
+
 
 class ChatController extends Controller
 {
-    public function chat(User $user, Chat $message)
+    public function chat(Group $group)
     {
 
-        $myUserId = auth()->user()->id;
-        $otherUserId = $user->id;
-        
-        $chat = Room::where(function($query) use ($myUserId,$otherUserId) {
-            $query->where('send_to', $myUserId)
-                ->where('group_id', $otherUserId);
-        })->orWhere(function($query) use ($myUserId, $otherUserId) {
-            $query->where('send_to', $otherUserId)
-                ->where('group_id', $myUserId);
-        })->first();
-        
-        if (!$chat) {
-            $chat = new Room();
-            $chat->group_id = $myUserId;
-            $chat->send_to = $otherUserId;
-            $chat->save();
-        }
-        
-        
-            $messages = Chat::where('group_id', $chat->id)->orderBy('updated_at', 'DESC')->get();;
 
+        $chats = Chat::where('group_id', $group->id)->orderBy('updated_at', 'DESC')->get();
 
-        return view('tobuys.chat')->with(['chat' => $chat, 'message' => $message]);
+        return view('tobuys.chat')->with(['chats' => $chats, 'group' => $group]);
     }
+    
+    
+    public function sendMessage(Chat $chat, Request $request,)
+    {
+        // auth()->user() : 現在認証しているユーザーを取得
+        $user = auth()->user();
+        $strUserId = $user->id;
+        $strUsername = $user->name;
+
+        // リクエストからデータの取り出し
+        $strMessage = $request->input('message');
+        
+        // メッセージオブジェクトの作成
+        $message = new Message;
+        $message->body = $strMessage;
+        $message->group_id = $request->input('group_id');
+        
+        $message->userName = $strUsername;
+        MessageSent::dispatch($message);
+        
+        // データベースの保存処理
+        $chat->send_to = $strUserId;
+        $chat->message = $strMessage;
+        $chat->group_id = $request->input('group_id');
+        $chat->save();
+        
+        return response()->json(['message' => 'Message sent successfully']);
+            
+        }
 }

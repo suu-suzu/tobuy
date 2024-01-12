@@ -24,12 +24,12 @@
                         @method('DELETE')
                         <button type="button" onclick="deleteTobuy({{ $tobuy->id }})">削除</button>
                     </form>
+                    <a href="/chat/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}とチャットする</a>
                 @endforeach
                 <a href='/tobuys/create'>追加</a>
                 <div class='paginate'>
                     {{ $tobuys->links() }}
                 </div>
-                <a href="/chat/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}とチャットする</a>
                 <script>
                     function deleteTobuy(id) {
                         'use strict'

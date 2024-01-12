@@ -53,4 +53,12 @@ class TobuyController extends Controller
         $tobuy->delete();
         return redirect('/');
     }
+    
+        public function group(Tobuy $tobuy)
+    {
+        $groups=auth()->user()->groups;
+        return view('tobuys.index',compact('groups'));
+
+    }
+
 }

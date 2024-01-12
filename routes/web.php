@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TobuyController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\GroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('/dashboard', function () {
 
 Route::controller(TobuyController::class)->middleware(['auth'])->group(function(){
     Route::get('/','index')->name('index');
+    Route::get('/group', 'group')->name('group');
     Route::get('tobuys/create', 'create');
     Route::get('tobuys/{tobuy}', 'show');
     Route::post('/tobuys', 'store');
@@ -37,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/chat/{user}', [ChatController::class, 'chat']);
+Route::get('/chat/{group}', [ChatController::class, 'chat']);
+
+Route::post('/chat', [ChatController::class, 'sendMessage']);
 
 require __DIR__.'/auth.php';
