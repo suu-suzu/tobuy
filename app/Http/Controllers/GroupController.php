@@ -7,5 +7,5 @@ use App\Models\Group;
 
 class GroupController extends Controller
 {
-   
+ 
 }

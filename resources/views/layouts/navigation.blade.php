@@ -18,6 +18,10 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('To buy一覧') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('group')" :active="request()->routeIs('group')">
+                        {{ __('グループ一覧') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 
