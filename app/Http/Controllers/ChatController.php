@@ -16,9 +16,7 @@ class ChatController extends Controller
     public function chat(Group $group)
     {
 
-
         $chats = Chat::where('group_id', $group->id)->orderBy('updated_at', 'DESC')->get();
-
         return view('tobuys.chat')->with(['chats' => $chats, 'group' => $group]);
     }
     
