@@ -21,7 +21,6 @@
                     <x-nav-link :href="route('group')" :active="request()->routeIs('group')">
                         {{ __('グループ一覧') }}
                     </x-nav-link>
-
                 </div>
             </div>
 
