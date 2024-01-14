@@ -22,7 +22,7 @@
             </div>
             <div class="group">
                 <h3>グループ</h3>
-                <p>{{ $tobuy->group->name }}</p>
+                <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
             </div>
             <div class="memo">
                 <h3>メモ</h3>

@@ -32,6 +32,7 @@ Route::controller(TobuyController::class)->middleware(['auth'])->group(function(
     Route::delete('tobuys/{tobuy}', 'delete');
 });
 
+Route::get('/groups/{group}', [GroupController::class,'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

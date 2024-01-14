@@ -25,7 +25,9 @@
                         <button type="button" onclick="deleteTobuy({{ $tobuy->id }})">削除</button>
                     </form>
                 @endforeach
-                <a href='/tobuys/create'>追加</a>
+                <div class="footer">
+                <a href="/">戻る</a>
+               </div>
                 <div class='paginate'>
                     {{ $tobuys->links() }}
                 </div>
