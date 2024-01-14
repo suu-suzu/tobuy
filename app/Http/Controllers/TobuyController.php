@@ -10,7 +10,7 @@ class TobuyController extends Controller
 {
     public function index(Tobuy $tobuy)
     {
-        $tobuys = Tobuy::with('group')->paginate(5);
+        $tobuys = Tobuy::orderBy('deadline', 'asc')->with('group')->paginate(5);
         return view('tobuys.index',compact('tobuys'));
 
     }

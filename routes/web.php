@@ -16,13 +16,15 @@ use App\Http\Controllers\GroupController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::view('/', 'tobuys.top');
+Route::view('/group/create', 'groups.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::controller(TobuyController::class)->middleware(['auth'])->group(function(){
-    Route::get('/','index')->name('index');
+    Route::get('/index','index')->name('index');
     Route::get('/group', 'group')->name('group');
     Route::get('tobuys/create', 'create');
     Route::get('tobuys/{tobuy}', 'show');
@@ -32,7 +34,9 @@ Route::controller(TobuyController::class)->middleware(['auth'])->group(function(
     Route::delete('tobuys/{tobuy}', 'delete');
 });
 
-Route::get('/groups/{group}', [GroupController::class,'index']);
+Route::get('/groups/{group}', [GroupController::class,'show']);
+Route::post('/group', [GroupController::class,'create']);
+// Route::get('/group', [GroupController::class,'index'])->name('group');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
