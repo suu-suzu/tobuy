@@ -10,6 +10,12 @@ class Group extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'name',
+    ];
+
+    public $timestamps = false;
+    
     public function tobuys(){
         return $this->hasMany(Tobuy::class);
     }
@@ -23,5 +29,4 @@ class Group extends Model
         return $this->belongsToMany(User::class, 'group_users');
     }
     
-
 }
