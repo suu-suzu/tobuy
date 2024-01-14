@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tobuy;
+use App\Models\Group;
 
 class TobuyController extends Controller
 {
@@ -20,9 +21,9 @@ class TobuyController extends Controller
         return view('tobuys.show')->with(['tobuy' => $tobuy]);
     }
     
-    public function create()
+    public function create(Group $group)
     {
-        return view('tobuys.create');
+        return view('tobuys.create')->with(['groups' => $group->get()]);
     }
     
     public function store(Request $request, Tobuy $tobuy)
@@ -44,7 +45,6 @@ class TobuyController extends Controller
     {
         $input_tobuy = $request['tobuy'];
         $tobuy->fill($input_tobuy)->save();
-        
         return redirect('/');
     }
     

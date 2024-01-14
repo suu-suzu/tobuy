@@ -14,8 +14,14 @@ class Group extends Model
         return $this->hasMany(Tobuy::class);
     }
     
+    public function getByGroup(int $limit_count = 5){
+        return $this->tobuys()->with('group')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
+    
+
     public function users(){
         return $this->belongsToMany(User::class, 'group_users');
     }
     
+
 }

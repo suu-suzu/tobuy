@@ -21,7 +21,11 @@
                 </div>
                 <div class="group">
                     <h2>グループ</h2>
-                    <input type="select" name="tobuy[group_id]" placeholder="グループ１"/>
+                    <select name="tobuy[group_id]">
+                         @foreach($groups as $group)
+                             <option value="{{ $group->id }}">{{ $group->name }}</option>
+                         @endforeach
+                    </select>
                 </div>
                 <div class="memo">
                     <h2>メモ</h2>
