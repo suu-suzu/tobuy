@@ -10,12 +10,9 @@ class GroupController extends Controller
 {
     public function index(Group $group)
     {
-        return view('tobuys.group')->with(['groups' => $group->get()]);
-    }
-    
-    public function show(Group $group)
-    {
-        return view('groups.index')->with(['tobuys' => $group->getByGroup()]);
+        $user = auth()->user();
+        $my_group = $user->groups;
+        return view('groups.index')->with(['my_groups' => $my_group, 'groups' => $group->get()]);
     }
     
     public function create(Request $request, Group $group)
@@ -24,4 +21,12 @@ class GroupController extends Controller
         $group->fill($input)->save();
         return redirect('/group');
     }
+    
+    public function add(Request $request)
+    {
+        $user=auth()->user();
+        $user->groups()->syncWithoutDetaching($request->group_id);
+        return redirect('/group');
+    }
 }
+
