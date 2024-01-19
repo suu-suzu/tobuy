@@ -27,6 +27,10 @@
                     @endforeach
                 </form>
             </div>
+        　  <div class='group_create'>
+                <a href="/group/create">グループ作成</a>
+            </div>
+
         </body>
     </x-app-layout>
 </html>
