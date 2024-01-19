@@ -28,5 +28,6 @@ class GroupController extends Controller
         $user->groups()->syncWithoutDetaching($request->group_id);
         return redirect('/group');
     }
+    
 }
 

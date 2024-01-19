@@ -21,7 +21,7 @@
                 <h2>グループに参加する</h2>
                 <form action="/group/add" method="post">
                     @csrf
-                     @foreach ($groups as $group)
+                    @foreach ($groups as $group)
                         <h3>{{ $group->name }}</h3>
                         <button type="submit" name="group_id" value="{{ $group->id }}">参加+</button>
                     @endforeach
@@ -30,7 +30,15 @@
         　  <div class='group_create'>
                 <a href="/group/create">グループ作成</a>
             </div>
-
+            <script>
+                function deletePost(id) {
+                    'use strict'
+    
+                    if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                      document.getElementById(`form_${id}`).submit();
+                    }
+                }
+            </script>
         </body>
     </x-app-layout>
 </html>
