@@ -19,19 +19,24 @@
             </div>
             <div class='groups'>
                 <h2>グループに参加する</h2>
-                <form action="/group/add" method="post">
-                    @csrf
                     @foreach ($groups as $group)
                         <h3>{{ $group->name }}</h3>
+                    <form action="/group/add" method="post">
+                        @csrf
                         <button type="submit" name="group_id" value="{{ $group->id }}">参加+</button>
+                    </form>
+                    <form action="/group/{{ $group->id }}" id="form_{{ $group->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="deleteGroup({{ $group->id }})" >削除</button>
+                    </form>
                     @endforeach
-                </form>
             </div>
         　  <div class='group_create'>
                 <a href="/group/create">グループ作成</a>
             </div>
             <script>
-                function deletePost(id) {
+                function deleteGroup(id) {
                     'use strict'
     
                     if (confirm('削除すると復元できません。\n本当に削除しますか？')) {

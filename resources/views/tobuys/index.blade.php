@@ -17,7 +17,7 @@
                     <h2 class='tobuy'>
                     <a href="/tobuys/{{ $tobuy->id }}">{{ $tobuy->tobuy }}</a>
                     </h2>
-                    <a href="/tobuys/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
+                    <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
                     <p class='deadline'>{{ $tobuy->deadline }}</p>
                     <form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
                         @csrf

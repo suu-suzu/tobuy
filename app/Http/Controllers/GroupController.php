@@ -23,11 +23,16 @@ class GroupController extends Controller
     }
     
     public function add(Request $request)
-    {
+    { 
         $user=auth()->user();
         $user->groups()->syncWithoutDetaching($request->group_id);
         return redirect('/group');
     }
     
+    public function delete(Group $group)
+    {
+        $group->delete();
+        return redirect('/group');
+    }
 }
 

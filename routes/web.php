@@ -25,8 +25,8 @@ Route::get('/dashboard', function () {
 
 Route::controller(TobuyController::class)->middleware(['auth'])->group(function(){
     Route::get('/index','index')->name('index');
-    Route::get('/tobuys/{group}', 'group_by');
     Route::get('/tobuys/create', 'create');
+    Route::get('/groups/{group}', 'group_by');
     Route::get('/tobuys/{tobuy}', 'show');
     Route::post('/tobuys', 'store');
     Route::get('/tobuys/{tobuy}/edit', 'edit');
@@ -38,6 +38,7 @@ Route::controller(GroupController::class)->middleware(['auth'])->group(function(
     Route::get('/group', 'index')->name('group');
     Route::post('/group', 'create');
     Route::post('/group/add', 'add');
+    Route::delete('/group/{group}', 'delete');
 });
 
 

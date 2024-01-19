@@ -45,13 +45,13 @@ class TobuyController extends Controller
     {
         $input_tobuy = $request['tobuy'];
         $tobuy->fill($input_tobuy)->save();
-        return redirect('/');
+        return redirect('/index');
     }
     
     public function delete(Tobuy $tobuy)
     {
         $tobuy->delete();
-        return redirect('/');
+        return redirect('/index');
     }
     
     // public function group(Tobuy $tobuy)
