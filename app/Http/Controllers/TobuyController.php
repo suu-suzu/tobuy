@@ -45,20 +45,25 @@ class TobuyController extends Controller
     {
         $input_tobuy = $request['tobuy'];
         $tobuy->fill($input_tobuy)->save();
-        return redirect('/');
+        return redirect('/index');
     }
     
     public function delete(Tobuy $tobuy)
     {
         $tobuy->delete();
-        return redirect('/');
+        return redirect('/index');
     }
     
-    public function group(Tobuy $tobuy)
-    {
-        $groups=auth()->user()->groups;
-        return view('tobuys.group',compact('groups'));
+    // public function group(Tobuy $tobuy)
+    // {
+    //     $groups=auth()->user()->groups;
+    //     return view('tobuys.group',compact('groups'));
 
+    // }
+    
+    public function group_by(Group $group)
+    {
+        return view('tobuys.group')->with(['tobuys' => $group->getByGroup()]);
     }
 
 }

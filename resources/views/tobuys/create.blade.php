@@ -34,7 +34,7 @@
                 <input type="submit" value="登録"/>
             </form>
             <div class="footer">
-                <a href="/">戻る</a>
+                <a href="/index">戻る</a>
             </div>
         </body>
     </x-app-layout>

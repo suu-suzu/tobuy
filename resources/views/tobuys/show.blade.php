@@ -31,7 +31,7 @@
             <div class="edit">
                 <a href="/tobuys/{{ $tobuy->id }}/edit">編集</a></div>
             <div class="footer">
-                <a href="/">戻る</a>
+                <a href="/index">戻る</a>
             </div>
         </body>
     </x-app-layout>

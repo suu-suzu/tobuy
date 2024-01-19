@@ -25,17 +25,23 @@ Route::get('/dashboard', function () {
 
 Route::controller(TobuyController::class)->middleware(['auth'])->group(function(){
     Route::get('/index','index')->name('index');
-    Route::get('/group', 'group')->name('group');
-    Route::get('tobuys/create', 'create');
-    Route::get('tobuys/{tobuy}', 'show');
+    Route::get('/tobuys/create', 'create');
+    Route::get('/groups/{group}', 'group_by');
+    Route::get('/tobuys/{tobuy}', 'show');
     Route::post('/tobuys', 'store');
     Route::get('/tobuys/{tobuy}/edit', 'edit');
     Route::put('/tobuys/{tobuy}','update');
     Route::delete('tobuys/{tobuy}', 'delete');
 });
 
-Route::get('/groups/{group}', [GroupController::class,'show']);
-Route::post('/group', [GroupController::class,'create']);
+Route::controller(GroupController::class)->middleware(['auth'])->group(function(){
+    Route::get('/group', 'index')->name('group');
+    Route::post('/group', 'create');
+    Route::post('/group/add', 'add');
+    Route::delete('/group/{group}', 'delete');
+});
+
+
 // Route::get('/group', [GroupController::class,'index'])->name('group');
 
 Route::middleware('auth')->group(function () {
