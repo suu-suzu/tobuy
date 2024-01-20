@@ -19,6 +19,10 @@
                     <h2>期限</h2>
                     <input type="date" name="tobuy[deadline]"/>
                 </div>
+                <div class="count">
+                    <h2>個数</h2>
+                    <input type="number" name="tobuy[count]" step="1" min="1">
+                </div>
                 <div class="group">
                     <h2>グループ</h2>
                     <select name="tobuy[group_id]">
