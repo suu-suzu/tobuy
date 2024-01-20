@@ -26,11 +26,15 @@
                     </div>
                     <div class="content_count">
                         <h3>個数</h3>
-                        <input type="number" name="tobuy[count]" step="1" min="1">
+                        <input type="number" name="tobuy[count]" step="1" min="1" value="{{ $tobuy->count }}">
                     </div>
                     <div class="content_group">
                         <h3>グループ</h3>
-                        <input type='select' name='tobuy[group]' value="{{ $tobuy->group_id }}">
+                        <select name="tobuy[group_id]">
+                            @foreach($groups as $group)
+                                 <option value="{{ $group->id }}">{{ $group->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="content_memo">
                         <h3>メモ</h3>

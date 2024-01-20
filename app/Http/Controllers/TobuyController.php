@@ -44,9 +44,9 @@ class TobuyController extends Controller
         return redirect('/index');
     }
     
-    public function edit(Tobuy $tobuy)
+    public function edit(Tobuy $tobuy, Group $group)
     {
-        return view('tobuys.edit')->with(['tobuy' => $tobuy]);
+        return view('tobuys.edit')->with(['tobuy' => $tobuy, 'groups' => $group->get]);
     }
     
     public function update(Request $request, Tobuy $tobuy)
