@@ -27,7 +27,7 @@ Route::controller(TobuyController::class)->middleware(['auth'])->group(function(
     Route::get('/index','index')->name('index');
     Route::get('/tobuys/create', 'create');
     Route::get('/groups/{group}', 'group_by');
-    Route::get('/tobuys/{tobuy}', 'show');
+    Route::get('/tobuys/{tobuy}/show', 'show');
     Route::post('/tobuys', 'store');
     Route::get('/tobuys/{tobuy}/edit', 'edit');
     Route::put('/tobuys/{tobuy}','update');

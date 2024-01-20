@@ -5,9 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use DateTime;
 
-class ChatSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +17,10 @@ class ChatSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('chats')->insert([
-            'send_to' => 1,
-            'message' => 'こんにちは',
-            'group_id' => 1,
+        DB::table('users')->insert([
+            'name' => 'misa',
+            'email' => 'lingchuanmeicai@gmail.com',
+            'password' => Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
