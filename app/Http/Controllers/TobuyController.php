@@ -30,6 +30,7 @@ class TobuyController extends Controller
     
     public function create(Group $group)
     {
+    
         return view('tobuys.create')->with(['groups' => $group->get()]);
     }
     
