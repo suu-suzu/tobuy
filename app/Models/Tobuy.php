@@ -25,6 +25,7 @@ public function group()
 protected $fillable = [
     'tobuy',
     'deadline',
+    'count',
     'group_id',
     'memo'
 ];

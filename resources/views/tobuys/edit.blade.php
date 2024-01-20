@@ -24,6 +24,10 @@
                         <h3>期限</h3>
                         <input type='date' name='tobuy[deadline]' value="{{ $tobuy->deadline }}">  
                     </div>
+                    <div class="content_count">
+                        <h3>個数</h3>
+                        <input type="number" name="tobuy[count]" step="1" min="1">
+                    </div>
                     <div class="content_group">
                         <h3>グループ</h3>
                         <input type='select' name='tobuy[group]' value="{{ $tobuy->group_id }}">

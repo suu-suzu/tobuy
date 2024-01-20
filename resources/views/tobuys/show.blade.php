@@ -20,6 +20,10 @@
                 <h3>期限</h3>
                 <p>{{ $tobuy->deadline }}</p>    
             </div>
+            <div class='count'>
+                <h3>個数</h3>
+                <p>{{ $tobuy->count }}</p>
+            </div>
             <div class="group">
                 <h3>グループ</h3>
                 <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>

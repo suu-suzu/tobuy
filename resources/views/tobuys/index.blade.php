@@ -19,6 +19,7 @@
                     </h2>
                     <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
                     <p class='deadline'>{{ $tobuy->deadline }}</p>
+                    <p class='count'>{{ $tobuy->count }}</p>
                     <form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
                         @csrf
                         @method('DELETE')
