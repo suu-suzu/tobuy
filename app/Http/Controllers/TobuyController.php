@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tobuy;
 use App\Models\Group;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class TobuyController extends Controller
 {
     public function index(Tobuy $tobuy)
     {
-        $tobuys = Tobuy::orderBy('deadline', 'asc')->with('group')->paginate(5);
+        $groupids = [];
+        foreach(Auth::user()->groups as $group)
+        {
+            $groupids[] = $group->id;
+        }
+        $tobuys = Tobuy::orderBy('deadline', 'asc')->with('group')->whereIn('group_id', $groupids)->paginate(5);
         return view('tobuys.index',compact('tobuys'));
 
     }
@@ -23,6 +30,7 @@ class TobuyController extends Controller
     
     public function create(Group $group)
     {
+    
         return view('tobuys.create')->with(['groups' => $group->get()]);
     }
     
@@ -33,7 +41,7 @@ class TobuyController extends Controller
         $tobuy->group_id = 1;
         $tobuy->fill($input);
         $tobuy->save();
-        return redirect('/');
+        return redirect('/index');
     }
     
     public function edit(Tobuy $tobuy)
