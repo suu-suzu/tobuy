@@ -8,10 +8,11 @@
             @foreach ($tobuys as $tobuy)
             <div class='tobuy'>
                 <h2 class='tobuy'>
-                <a href="/tobuys/{{ $tobuy->id }}">{{ $tobuy->tobuy }}</a>
+                <a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a>
                 </h2>
-                <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
                 <p class='deadline'>{{ $tobuy->deadline }}</p>
+                <p class='count'>{{ $tobuy->count }}</p>
+                <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
                 <form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
                     @csrf
                     @method('DELETE')
