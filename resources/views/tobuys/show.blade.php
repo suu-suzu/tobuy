@@ -12,28 +12,39 @@
             to buy詳細
         </x-slot>
         <body>
-            <div class="tobuy">
-                <h3>tobuy</h3>
-                <p>{{ $tobuy->tobuy }}</p>
-            </div>
-            <div class="deadline">
-                <h3>期限</h3>
-                <p>{{ $tobuy->deadline }}</p>    
-            </div>
-            <div class='count'>
-                <h3>個数</h3>
-                <p>{{ $tobuy->count }}</p>
-            </div>
-            <div class="group">
-                <h3>グループ</h3>
-                <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
-            </div>
-            <div class="memo">
-                <h3>メモ</h3>
-                <p>{{ $tobuy->memo }}</p>
-            </div>
-            <div class="edit">
-                <a href="/tobuys/{{ $tobuy->id }}/edit">編集</a></div>
+        <table class="tobuy">
+                <thead>
+                    <tr>
+                        <th>tobuy</th>
+                        <th>期限</th>
+                        <th>個数</th>
+                        <th>グループ</th>
+                        <th>メモ</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <div class="tobuy">
+                      <td><p>{{ $tobuy->tobuy }}</p></td>
+                    </div>
+                    <div class="deadline">
+                       <td><p>{{ $tobuy->deadline }}</p></td>   
+                    </div>
+                    <div class='count'>
+                       <td> <p>{{ $tobuy->count }}</p></td>
+                    </div>
+                    <div class="group">
+                        <td><a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a></td>
+                    </div>
+                    <div class="memo">
+                        <td><p>{{ $tobuy->memo }}</p></td>
+                    </div>
+                    <div class="edit">
+                        <td><a href="/tobuys/{{ $tobuy->id }}/edit">編集</a></td>
+                    </div>
+                </tr>
+            </tbody>
+            </table>
             <div class="footer">
                 <a href="/index">戻る</a>
             </div>
