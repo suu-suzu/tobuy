@@ -11,21 +11,36 @@
             to buy一覧
         </x-slot>
         <body>
-            <div class='tobuys'>
-                @foreach ($tobuys as $tobuy)
-                <div class='tobuy'>
-                    <h2 class='tobuy'>
-                    <a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a>
-                    </h2>
-                    <p class='deadline'>{{ $tobuy->deadline }}</p>
-                    <p class='count'>{{ $tobuy->count }}</p>
-                    <a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a>
-                    <form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="button" onclick="deleteTobuy({{ $tobuy->id }})">削除</button>
-                    </form>
-                @endforeach
+            <table class="tobuy">
+                <thead>
+                    <tr>
+                        <th>tobuy</th>
+                        <th>期限</th>
+                        <th>個数</th>
+                        <th>グループ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <div class='tobuys'>
+                   @foreach ($tobuys as $tobuy)
+                    <tr>
+                        <div class='tobuy'>
+                            <h2 class='tobuy'>
+                            <td><a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a></td>
+                            </h2>
+                            <td><p class='deadline'>{{ $tobuy->deadline }}</p></td>
+                            <td><p class='count'>{{ $tobuy->count }}</p></td>
+                            <td><a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a></td>
+                            <td><form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" onclick="deleteTobuy({{ $tobuy->id }})">削除</button>
+                            </form></td>
+                        </div>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
                 <a href='/tobuys/create'>追加</a>
                 <div class='paginate'>
                     {{ $tobuys->links() }}
