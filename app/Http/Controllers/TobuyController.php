@@ -32,7 +32,7 @@ class TobuyController extends Controller
     {
         $user = auth()->user();
         $my_group = $user->groups;
-        return view('tobuys.create')->with(['groups' => $group->get()]);
+        return view('tobuys.create')->with(['my_groups' =>$my_group, 'groups' => $group->get()]);
     }
     
     public function store(Request $request, Tobuy $tobuy)
@@ -47,7 +47,9 @@ class TobuyController extends Controller
     
     public function edit(Tobuy $tobuy, Group $group)
     {
-        return view('tobuys.edit')->with(['tobuy' => $tobuy, 'groups' => $group->get()]);
+        $user = auth()->user();
+        $my_group = $user->groups;
+        return view('tobuys.edit')->with(['my_groups' =>$my_group, 'tobuy' => $tobuy, 'groups' => $group->get()]);
     }
     
     public function update(Request $request, Tobuy $tobuy)
