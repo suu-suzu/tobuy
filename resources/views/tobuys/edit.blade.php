@@ -31,7 +31,7 @@
                     <div class="content_group">
                         <h3>グループ</h3>
                         <select name="tobuy[group_id]">
-                            @foreach($groups as $group)
+                            @foreach($my_groups as $group)
                                  <option value="{{ $group->id }}">{{ $group->name }}</option>
                             @endforeach
                         </select>

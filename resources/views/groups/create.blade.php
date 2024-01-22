@@ -16,6 +16,9 @@
                 <input type="text" name="group[name]"/>
                 <input type="submit" value="作成"/>
             </form>
+            <div class="footer">
+            <a href="/group">戻る</a>
+           </div>
         </body>
     </x-app-layout>
 </html>

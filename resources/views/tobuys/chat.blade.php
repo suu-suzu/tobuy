@@ -20,14 +20,24 @@
                         <input type="hidden" id="group_id" name="chat_id" value="{{ $group->id }}"> 
                         <button type="submit" class="text-white bg-blue-700 px-5 py-2">送信</button>
                     </form>
+                    </ul>
+                    <h2>グループメンバー</h2>
+                    <ul>
+                        @foreach ($group_participants as $group_participant)
+                            <li>{{ $group_participant->name }}</li>
+                        @endforeach
+                    </ul>
                     <ul class="list-disc" id="list_message">
                         @foreach ($chats as $chat)
                             <li>
                                 <strong>{{ $chat->user->name }}:</strong>
                                 <div>{{ $chat->message }}</div>
                             </li>
-                         @endforeach
+                        @endforeach
                     </ul>
+                    <div class="footer">
+                        <a href="/group">戻る</a>
+                    </div>
                 </div>
             </div>
         </div>

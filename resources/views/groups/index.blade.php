@@ -14,7 +14,7 @@
             <div class='my_groups'>
                 <h2>自分の所属</h2>
                 @foreach ($my_groups as $group)
-                    <a href="/chat/{{ $group->id }}">{{ $group->name }}とチャットする</a>
+                    <a href="/chat/{{ $group->id }}">{{ $group->name }}とチャットする</a><br>
                 @endforeach
             </div>
             <div class='groups'>
