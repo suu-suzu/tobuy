@@ -26,8 +26,11 @@
                                 <strong>{{ $chat->user->name }}:</strong>
                                 <div>{{ $chat->message }}</div>
                             </li>
-                         @endforeach
+                        @endforeach
                     </ul>
+                    <div class="footer">
+                        <a href="/group">戻る</a>
+                    </div>
                 </div>
             </div>
         </div>
