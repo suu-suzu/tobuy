@@ -28,7 +28,7 @@
                     <form action="/group/{{ $group->id }}" id="form_{{ $group->id }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" onclick="deleteGroup({{ $group->id }})" >削除</button>
+                        <button type="button" onclick="deleteGroup({{ $group->id }})" >削除</button>
                     </form>
                     @endforeach
             </div>
