@@ -24,6 +24,7 @@
             <div class='groups'>
                 <h2>グループに参加する</h2>
                     @foreach ($groups as $group)
+                    @if(!$group->users->find(Auth::id()))
                         <h3>{{ $group->name }}</h3>
                     <form action="/group/add" method="post">
                         @csrf
@@ -34,6 +35,7 @@
                         @method('DELETE')
                         <button type="button" onclick="deleteGroup({{ $group->id }})">削除</button>
                     </form>
+                    @endif
                     @endforeach
             </div>
         　  <div class='group_create'>

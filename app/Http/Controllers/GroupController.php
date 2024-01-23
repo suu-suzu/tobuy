@@ -46,13 +46,13 @@ class GroupController extends Controller
         return redirect('/group');
     }
     
-    public function permission(User $user,Group $group)
+    public function permission(User $user, Group $group)
     {
         $user->groups()->syncWithoutDetaching([$group->id => ['application' => 1]]);
         return redirect('/chat/' . $group->id);
     }
     
-     public function reject(User $user,Group $group)
+     public function reject(User $user, Group $group)
     {
         $user->groups()->detach($group->id);
         return redirect('/chat/' . $group->id);
