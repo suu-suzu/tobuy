@@ -36,8 +36,11 @@ Route::controller(TobuyController::class)->middleware(['auth'])->group(function(
 
 Route::controller(GroupController::class)->middleware(['auth'])->group(function(){
     Route::get('/group', 'index')->name('group');
+    Route::post('/group/leave/{group}', 'leave');
     Route::post('/group', 'create');
     Route::post('/group/add', 'add');
+    Route::post('/group/permission/{user}/{group}', 'permission');
+    Route::post('/group/permissionReject/{user}/{group}', 'reject');
     Route::delete('/group/{group}', 'delete');
 });
 
