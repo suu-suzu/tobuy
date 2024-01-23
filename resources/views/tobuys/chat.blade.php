@@ -38,10 +38,25 @@
                     <div class="footer">
                         <a href="/group">戻る</a>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+    <h1>申請中メンバー</h1>
+    @foreach($users as $user)
+        <div class="flex">
+            <p>{{ $user->name }}</p>
+            <form action="/group/permission/{{$user->id}}/{{ $group->id}}" method="post">
+                @csrf
+                <button>許可</button>
+            </form>
+            <form action="/group/permissionReject/{{$user->id}}/{{ $group->id}}" method="post">
+                @csrf
+                <button>許可しない</button>
+            </form>
+        </div>
+    @endforeach
 <script>
     const elementInputMessage = document.getElementById("input_message");
     const chatId = document.getElementById("group_id").value;

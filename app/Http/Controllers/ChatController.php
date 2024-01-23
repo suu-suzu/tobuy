@@ -15,9 +15,17 @@ class ChatController extends Controller
 {
     public function chat(Group $group)
     {
-        $group_participants = $group->users;
+        $group_participants = User::whereHas('groups', function ($q) use ($group){
+            $q->where('application', 1)->where('group_id', $group->id);
+        })->get();
+        
         $chats = Chat::where('group_id', $group->id)->orderBy('updated_at', 'DESC')->get();
-        return view('tobuys.chat')->with(['chats' => $chats, 'group' => $group, 'group_participants' => $group_participants]);
+        
+        $users =  User::whereHas('groups', function ($q) use ($group){
+            $q->where('application', 0)->where('group_id', $group->id);
+        })->get();
+        
+        return view('tobuys.chat')->with(['chats' => $chats, 'group' => $group, 'group_participants' => $group_participants, 'users' => $users]);
     }
     
     
