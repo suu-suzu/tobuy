@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('group_id')->constrained('groups');
             $table->foreignId('user_id')->constrained('users');
             $table->primary(['group_id', 'user_id']);
+            $table->softDeletes();
         });
     }
 
