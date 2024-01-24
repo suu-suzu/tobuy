@@ -12,6 +12,7 @@ class TobuyController extends Controller
 {
     public function index(Tobuy $tobuy)
     {
+        $user = auth()->user();
         $groupids = [];
         foreach(Auth::user()->groups as $group)
         {
@@ -32,7 +33,6 @@ class TobuyController extends Controller
     {
         $user = auth()->user();
         $my_group = $user->groups;
-        $user = auth()->user();
         $my_group = Group::whereHas('users', function ($q){
             $q->where('application', 1)->where('user_id', auth()->id());
         })->get();

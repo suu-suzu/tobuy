@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                 <div class='tobuys'>
-                   @foreach ($tobuys as $tobuy)
+                    @foreach ($tobuys as $tobuy)
                     <tr>
                         <div class='tobuy'>
                             <h2 class='tobuy'>

@@ -19,6 +19,12 @@
                             @csrf
                             <button type="button" onclick="leaveGroup({{ $group->id }})">退会</button><br>
                         </form>
+                        <form action="/group/{{ $group->id }}" id="form_{{ $group->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" onclick="deleteGroup({{ $group->id }})">削除</button>
+                    </form>
+
                     @endforeach
             </div>
             <div class='groups'>
@@ -30,11 +36,6 @@
                         @csrf
                         <button type="submit" name="group_id" value="{{ $group->id }}">参加申請</button>
                     </form>
-                    <form action="/group/{{ $group->id }}" id="form_{{ $group->id }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="button" onclick="deleteGroup({{ $group->id }})">削除</button>
-                    </form>
                     @endif
                     @endforeach
             </div>
@@ -45,7 +46,7 @@
                 function leaveGroup(id) {
                     'use strict'
     
-                    if (confirm('退会すると復元できません。\n本当に退会しますか？')) {
+                    if (confirm('本当に退会しますか？')) {
                       document.getElementById(`leave_${id}`).submit();
                     }
                 }

@@ -25,7 +25,7 @@ class ChatController extends Controller
             $q->where('application', 0)->where('group_id', $group->id);
         })->get();
         
-        return view('tobuys.chat')->with(['chats' => $chats, 'group' => $group, 'group_members' => $group_members, 'users' => $users]);
+        return view('groups.chat')->with(['chats' => $chats, 'group' => $group, 'group_members' => $group_members, 'users' => $users]);
     }
     
     
