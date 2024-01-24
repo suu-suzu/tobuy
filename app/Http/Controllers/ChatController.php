@@ -15,7 +15,7 @@ class ChatController extends Controller
 {
     public function chat(Group $group)
     {
-        $group_participants = User::whereHas('groups', function ($q) use ($group){
+        $group_members = User::whereHas('groups', function ($q) use ($group){
             $q->where('application', 1)->where('group_id', $group->id);
         })->get();
         
@@ -25,7 +25,7 @@ class ChatController extends Controller
             $q->where('application', 0)->where('group_id', $group->id);
         })->get();
         
-        return view('tobuys.chat')->with(['chats' => $chats, 'group' => $group, 'group_participants' => $group_participants, 'users' => $users]);
+        return view('tobuys.chat')->with(['chats' => $chats, 'group' => $group, 'group_members' => $group_members, 'users' => $users]);
     }
     
     
