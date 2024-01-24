@@ -12,14 +12,8 @@ class TobuyController extends Controller
 {
     public function index(Tobuy $tobuy)
     {
-        $groupids = [];
-        foreach(Auth::user()->groups as $group)
-        {
-            $groupids[] = $group->id;
-        }
-        $tobuys = Tobuy::orderBy('deadline', 'asc')->with('group')->whereIn('group_id', $groupids)->paginate(5);
-        return view('tobuys.index',compact('tobuys'));
-
+        $groups = Auth::user()->groups()->wherePivot('application', 1)->get();
+        return view('tobuys.index',compact('groups'));
     }
     
     public function show(Tobuy $tobuy)
@@ -32,6 +26,9 @@ class TobuyController extends Controller
     {
         $user = auth()->user();
         $my_group = $user->groups;
+        $my_group = Group::whereHas('users', function ($q){
+            $q->where('application', 1)->where('user_id', auth()->id());
+        })->get();
         return view('tobuys.create')->with(['my_groups' =>$my_group, 'groups' => $group->get()]);
     }
     
@@ -49,6 +46,10 @@ class TobuyController extends Controller
     {
         $user = auth()->user();
         $my_group = $user->groups;
+        $user = auth()->user();
+        $my_group = Group::whereHas('users', function ($q){
+            $q->where('application', 1)->where('user_id', auth()->id());
+        })->get();
         return view('tobuys.edit')->with(['my_groups' =>$my_group, 'tobuy' => $tobuy, 'groups' => $group->get()]);
     }
     

@@ -23,8 +23,8 @@
                     </ul>
                     <h2>グループメンバー</h2>
                     <ul>
-                        @foreach ($group_participants as $group_participant)
-                            <li>{{ $group_participant->name }}</li>
+                        @foreach ($group_members as $group_member)
+                            <li>{{ $group_member->name }}</li>
                         @endforeach
                     </ul>
                     <ul class="list-disc" id="list_message">
