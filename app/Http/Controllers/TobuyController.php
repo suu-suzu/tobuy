@@ -32,6 +32,10 @@ class TobuyController extends Controller
     {
         $user = auth()->user();
         $my_group = $user->groups;
+        $user = auth()->user();
+        $my_group = Group::whereHas('users', function ($q){
+            $q->where('application', 1)->where('user_id', auth()->id());
+        })->get();
         return view('tobuys.create')->with(['my_groups' =>$my_group, 'groups' => $group->get()]);
     }
     
@@ -49,6 +53,10 @@ class TobuyController extends Controller
     {
         $user = auth()->user();
         $my_group = $user->groups;
+        $user = auth()->user();
+        $my_group = Group::whereHas('users', function ($q){
+            $q->where('application', 1)->where('user_id', auth()->id());
+        })->get();
         return view('tobuys.edit')->with(['my_groups' =>$my_group, 'tobuy' => $tobuy, 'groups' => $group->get()]);
     }
     
