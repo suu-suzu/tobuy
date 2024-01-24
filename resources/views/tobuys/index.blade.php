@@ -22,7 +22,8 @@
                 </thead>
                 <tbody>
                 <div class='tobuys'>
-                    @foreach ($tobuys as $tobuy)
+                    @foreach($groups as $group)
+                    @foreach ($group->tobuys as $tobuy)
                     <tr>
                         <div class='tobuy'>
                             <h2 class='tobuy'>
@@ -39,11 +40,11 @@
                         </div>
                     </tr>
                     @endforeach
+                    @endforeach
                 </tbody>
             </table>
                 <a href='/tobuys/create'>追加</a>
                 <div class='paginate'>
-                    {{ $tobuys->links() }}
                 </div>
                 <script>
                     function deleteTobuy(id) {

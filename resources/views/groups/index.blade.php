@@ -24,7 +24,6 @@
                         @method('DELETE')
                         <button type="button" onclick="deleteGroup({{ $group->id }})">削除</button>
                     </form>
-
                     @endforeach
             </div>
             <div class='groups'>
