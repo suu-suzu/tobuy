@@ -7,6 +7,7 @@ use App\Models\Tobuy;
 use App\Models\Group;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Http\Requests\TobuyRequest;
 
 class TobuyController extends Controller
 {
@@ -32,7 +33,7 @@ class TobuyController extends Controller
         return view('tobuys.create')->with(['my_groups' =>$my_group, 'groups' => $group->get()]);
     }
     
-    public function store(Request $request, Tobuy $tobuy)
+    public function store(TobuyRequest $request, Tobuy $tobuy)
     {
         $input = $request['tobuy'];
         $tobuy = new Tobuy();

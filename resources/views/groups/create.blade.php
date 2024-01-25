@@ -20,8 +20,8 @@
                             <input type="text" name="group[name]"/>
                             <input class="bg-yellow-500 hover:bg-yellow-400 text-white rounded px-4 py-2" type="submit" value="作成"/>
                         </form>
-                        <div class="footer">
-                        <a href="/group" class="bg-gray-300 hover:bg-gray-200 text-black rounded px-4 py-2 my-2 block w-16">戻る</a>
+                        <div class="footer flex items-center">
+                        <a href="/group" class="bg-gray-300 hover:bg-gray-200 text-black rounded px-4 py-2 my-2 block">戻る</a>
                         </div>
                     </body>
                 </div>
