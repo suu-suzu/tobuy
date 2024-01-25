@@ -29,9 +29,12 @@
                             <h2 class='tobuy'>
                             <td><a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a></td>
                             </h2>
-                            <td><p class='deadline'>{{ $tobuy->deadline }}</p></td>
-                            <td><p class='count'>{{ $tobuy->count }}</p></td>
-                            <td><a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a></td>
+                                <td><p class='deadline'>{{ $tobuy->deadline }}</p></td>
+                                <td><p class='count'>{{ $tobuy->count }}</p></td>
+                                <td><a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a></td>
+                            <div class="edit">
+                                <td><a href="/tobuys/{{ $tobuy->id }}/edit">編集</a></td>
+                            </div>
                             <td><form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
                                 @csrf
                                 @method('DELETE')
