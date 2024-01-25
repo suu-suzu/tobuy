@@ -18,9 +18,7 @@ class ChatController extends Controller
         $group_members = User::whereHas('groups', function ($q) use ($group){
             $q->where('application', 1)->where('group_id', $group->id);
         })->get();
-        
-        $chats = Chat::where('group_id', $group->id)->orderBy('updated_at', 'DESC')->get();
-        
+        $chats = Chat::where('group_id', $group->id)->orderBy('updated_at', 'ASC')->get();
         $users =  User::whereHas('groups', function ($q) use ($group){
             $q->where('application', 0)->where('group_id', $group->id);
         })->get();
