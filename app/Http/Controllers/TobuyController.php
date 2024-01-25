@@ -54,7 +54,7 @@ class TobuyController extends Controller
         return view('tobuys.edit')->with(['my_groups' =>$my_group, 'tobuy' => $tobuy, 'groups' => $group->get()]);
     }
     
-    public function update(Request $request, Tobuy $tobuy)
+    public function update(TobuyRequest $request, Tobuy $tobuy)
     {
         $input_tobuy = $request['tobuy'];
         $tobuy->fill($input_tobuy)->save();

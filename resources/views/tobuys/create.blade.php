@@ -24,7 +24,7 @@
                 <div class="count">
                     <h2>個数</h2>
                     <input type="number" name="tobuy[count]" step="1" min="1" value="{{ old('tobuy.count') }}">
-                     <p class="count__error" style="color:red">{{ $errors->first('tobuy.count') }}</p>
+                    <p class="count__error" style="color:red">{{ $errors->first('tobuy.count') }}</p>
                 </div>
                 <div class="group">
                     <h2>グループ</h2>

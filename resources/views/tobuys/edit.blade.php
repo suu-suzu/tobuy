@@ -19,14 +19,17 @@
                     <div class="content_tobuy">
                         <h3>tobuy</h3>
                         <input type='text' name='tobuy[tobuy]' value="{{ $tobuy->tobuy }}">
+                        <p class="tobuy__error" style="color:red">{{ $errors->first('tobuy.tobuy') }}</p>
                     </div>
                     <div class="content_deadline">
                         <h3>期限</h3>
-                        <input type='date' name='tobuy[deadline]' value="{{ $tobuy->deadline }}">  
+                        <input type='date' name='tobuy[deadline]' value="{{ $tobuy->deadline }}">
+                        <p class="deadline__error" style="color:red">{{ $errors->first('tobuy.deadline') }}</p>
                     </div>
                     <div class="content_count">
                         <h3>個数</h3>
                         <input type="number" name="tobuy[count]" step="1" min="1" value="{{ $tobuy->count }}">
+                        <p class="count__error" style="color:red">{{ $errors->first('tobuy.count') }}</p>
                     </div>
                     <div class="content_group">
                         <h3>グループ</h3>
