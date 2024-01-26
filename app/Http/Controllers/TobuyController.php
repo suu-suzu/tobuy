@@ -13,8 +13,7 @@ class TobuyController extends Controller
 {
     public function index(Tobuy $tobuy)
     {
-        $groups = Auth::user()->groups()->wherePivot('application', 1)->get();
-        return view('tobuys.index',compact('groups'));
+        return view('tobuys.index')->with(['tobuys' => $tobuy->getMyGroupTobuy()]);
     }
     
     public function show(Tobuy $tobuy)
