@@ -54,16 +54,18 @@
                     <h2>申請中メンバー</h2>
                     <div class="flex justify-between items-center p-4 text-lg">
                     @foreach($users as $user)
-                        <div class="flex h-10">
-                            <p class="mr-10 py-2">{{ $user->name }}</p>
-                            <form action="/group/permission/{{$user->id}}/{{ $group->id}}" method="post">
-                                @csrf
-                                <button class="bg-red-400 hover:bg-red-300 text-white rounded px-4 py-2 mx-5">許可</button>
-                            </form>
-                            <form action="/group/permissionReject/{{$user->id}}/{{ $group->id}}" method="post">
-                                @csrf
-                                <button class="bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2">許可しない</button>
-                            </form>
+                        <div class="flex justify-between items-center mb-3 border-b pb-4">
+                            <div class="flex h-10">
+                                <p class="mr-10 py-2">{{ $user->name }}</p>
+                                <form action="/group/permission/{{$user->id}}/{{ $group->id}}" method="post">
+                                    @csrf
+                                    <button class="bg-red-400 hover:bg-red-300 text-white rounded px-4 py-2 mx-5">許可</button>
+                                </form>
+                                <form action="/group/permissionReject/{{$user->id}}/{{ $group->id}}" method="post">
+                                    @csrf
+                                    <button class="bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2">許可しない</button>
+                                </form>
+                            </div>
                         </div>
                     @endforeach
                     </div>
