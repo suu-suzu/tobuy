@@ -66,13 +66,6 @@ class TobuyController extends Controller
         return redirect('/index');
     }
     
-    // public function group(Tobuy $tobuy)
-    // {
-    //     $groups=auth()->user()->groups;
-    //     return view('tobuys.group',compact('groups'));
-
-    // }
-    
     public function group_by(Group $group)
     {
         return view('tobuys.group')->with(['tobuys' => $group->getByGroup()]);
