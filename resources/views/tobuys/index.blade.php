@@ -53,6 +53,7 @@
                             <div class="flex">
                                 <div>{{ $tobuys->links() }}</div>
                             </div>
+                    </body>
                 </div>
             </div>
         </div>
@@ -65,6 +66,5 @@
                             }
                         }
                     </script>
-                    </body>
     </x-app-layout>
 </html>
