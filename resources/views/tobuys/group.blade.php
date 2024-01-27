@@ -22,7 +22,7 @@
                             @foreach ($tobuys as $tobuy)
                             <tr>
                                 <div class='tobuy'>
-                                    <td align="center"><a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a></td>
+                                    <td height="50" align="center"><a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a></td>
                                     <td align="center"><p class='deadline'>{{ $tobuy->deadline }}</p></td>
                                     <td align="center"><p class='count'>{{ $tobuy->count }}</p></td>
                                     <td align="center"><a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a></td>

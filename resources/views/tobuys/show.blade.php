@@ -38,7 +38,7 @@
                             </tbody>
                         </table>
                             <div class="footer flex items-center">
-                                <a href="/index" class="bg-gray-300 hover:bg-gray-200 text-black rounded px-4 py-2 my-2 block">戻る</a>
+                                <a href="/index" class="bg-gray-300 hover:bg-gray-200 text-black rounded px-4 py-2 my-2">戻る</a>
                             </div>
                 </div>
             </div>
