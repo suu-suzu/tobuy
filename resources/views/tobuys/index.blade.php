@@ -50,9 +50,10 @@
                             <div class="flex items-center">
                                 <a href='/tobuys/create' class="bg-yellow-500 hover:bg-yellow-400 text-white rounded px-4 py-2">追加</a>
                             </div>
-                            <div class="flex">
+                            <div class="paginate">
                                 <div>{{ $tobuys->links() }}</div>
                             </div>
+                    </body>
                 </div>
             </div>
         </div>
@@ -65,6 +66,5 @@
                             }
                         }
                     </script>
-                    </body>
     </x-app-layout>
 </html>

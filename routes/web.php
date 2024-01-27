@@ -19,9 +19,9 @@ use App\Http\Controllers\GroupController;
 Route::view('/', 'tobuys.top');
 Route::view('/group/create', 'groups.create');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::controller(TobuyController::class)->middleware(['auth'])->group(function(){
     Route::get('/index','index')->name('index');
