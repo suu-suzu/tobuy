@@ -25,7 +25,7 @@ class TobuyRequest extends FormRequest
     {
         return [
             'tobuy.tobuy' => 'required|string',
-            'tobuy.deadline' => 'required|after:today|date',
+            'tobuy.deadline' => 'required|after:yesterday|date',
             'tobuy.count' => 'required|integer|min:1',
         ];
     }
