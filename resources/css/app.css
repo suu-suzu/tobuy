@@ -5,3 +5,11 @@
 h2 {
     @apply text-xl font-bold my-2;
 }
+
+.loginbutton{
+    @apply bg-blue-700 text-center text-white rounded;
+}
+
+.registerbutton{
+    @apply border-blue-500 hover:bg-inherit border font-semibold text-center text-blue-500 bg-inherit rounded;
+}
