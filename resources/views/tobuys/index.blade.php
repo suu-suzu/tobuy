@@ -29,25 +29,24 @@
                                     @foreach ($tobuys as $tobuy)
                                         <tr>
                                             <div class='touby'>
-                                                <td align="center"><a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a></td>
+                                                <td height="50" align="center"><a href="/tobuys/{{ $tobuy->id }}/show">{{ $tobuy->tobuy }}</a></td>
                                                 <td align="center"><p class='deadline'>{{ $tobuy->deadline }}</p></td>
                                                 <td align="center"><p class='count'>{{ $tobuy->count }}</p></td>
                                                 <td align="center"><a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a></td>
-                                                <div class="edit">
                                                 <td><a href="/tobuys/{{ $tobuy->id }}/edit" class="bg-gray-400 hover:bg-gray-300 text-white rounded px-4 py-2 mx-20 flex">編集</a></td>
-                                                </div>
                                                 <td><form action="/tobuys/{{ $tobuy->id }}" id="form_{{ $tobuy->id }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="button" onclick="deleteTobuy({{ $tobuy->id }})" class="bg-red-400 hover:bg-red-300 text-white rounded px-4 py-2 mx-20">削除</button>
-                                                </form></td>
+                                                    </form>
+                                                </td>
                                             </div>
                                         </tr>
                                     @endforeach
                                 </div>
                             </tbody>
                         </table>
-                            <div class="flex items-center">
+                            <div class="flex flex-row-reverse">
                                 <a href='/tobuys/create' class="bg-yellow-500 hover:bg-yellow-400 text-white rounded px-4 py-2">追加</a>
                             </div>
                             <div class="paginate">
