@@ -15,12 +15,16 @@
                         <h2>グループ作成</h2>
                     </x-slot>
                     <body>
-                        <form action="/group" method="POST">
-                            @csrf
-                            <input type="text" name="group[name]"/>
-                            <input class="bg-yellow-500 hover:bg-yellow-400 text-white rounded px-4 py-2" type="submit" value="作成"/>
-                        </form>
-                        <div class="footer flex items-center">
+                        <div class="flex items-center justify-center">
+                            <form action="/group" method="POST">
+                                <div class="flex items-center space-x-4 mt-4 mb-4"> 
+                                    @csrf
+                                    グループ名:<input type="text" name="group[name]"/>
+                                    <input class="bg-yellow-500 hover:bg-yellow-400 text-white rounded px-4 py-2" type="submit" value="作成"/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="footer flex items-center ml-80">
                         <a href="/group" class="bg-gray-300 hover:bg-gray-200 text-black rounded px-4 py-2 my-2 block">戻る</a>
                         </div>
                     </body>

@@ -21,3 +21,8 @@ h2 {
 .pagination li{
     display: inline-block;
 }
+
+.header{
+    position: fixed;
+}
+
