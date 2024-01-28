@@ -4,6 +4,8 @@
             {{ $group->name}}
         </h2>
     </x-slot>
+    <div class="grid grid-cols-3 grid-rows-2 gap-4">
+        <div class="col-span-1 row-span-1">
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -16,6 +18,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div class="col-span-2 row-span-2">
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -46,7 +50,9 @@
             </div>
         </div>
     </div>
-                    
+    </div>
+               
+    <div class="col-span-1 row-span-1">     
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -73,6 +79,8 @@
             </div>
         </div>
     </div>
+    </div>
+</div>
 <script>
     const elementInputMessage = document.getElementById("input_message");
     const chatId = document.getElementById("group_id").value;
