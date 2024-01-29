@@ -45,7 +45,7 @@
                             </div>
                             <div class="content_memo">
                                 <h2>メモ</h2>
-                                <textarea id="memo" name="tobuy[memo]" value="{{ $tobuy->memo }}" placeholder="メモ" maxlength="30"></textarea>
+                                <textarea id="memo" type="text" name="tobuy[memo]" value="{{ $tobuy->memo }}" placeholder="メモ" maxlength="30">{{ $tobuy->memo }}</textarea>
                                 <style>
                                     #memo {
                                         resize: none;
