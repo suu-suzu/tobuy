@@ -27,7 +27,7 @@
                             <ul class="list-disc overflow-y-scroll h-96" id="list_message">
                                 @foreach ($chats as $chat)
                                     <li>
-                                        <strong class="text-cyan-800">{{ $chat->user->name }}:</strong>
+                                        <strong>{{ $chat->user->name }}:</strong>
                                         <div>{{ $chat->message }}</div>
                                     </li>
                                 @endforeach
@@ -37,11 +37,11 @@
                                     <div class="flex items-center space-x-4 mt-4 mb-4"> 
                                         @csrf
                                         メッセージ :<textarea id="input_message" autocomplete="off" cols="30" rows="1" class="ml-4"></textarea>
-                                        <style>
-                                            #input_message {
-                                                resize: none;
-                                            }
-                                        </style>
+                                            <style>
+                                                #input_message {
+                                                    resize: none;
+                                                }
+                                            </style>
                                         <input type="hidden" id="group_id" name="chat_id" value="{{ $group->id }}"> 
                                         <button type="submit" class="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2">送信</button>
                                     </div>
@@ -136,7 +136,7 @@
                     elementMessage.textContent = strMessage;
                     elementLi.append(elementUsername);
                     elementLi.append(elementMessage);
-                    elementListMessage.append(elementLi); // リストの一番上に追加
+                    elementListMessage.append(elementLi); 
                 }
             });
         });

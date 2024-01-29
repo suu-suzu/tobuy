@@ -33,17 +33,17 @@
                                     <td align="center"><p>{{ $tobuy->count }}</p></td>
                                     <td align="center"><a href="/groups/{{ $tobuy->group->id }}">{{ $tobuy->group->name }}</a></td>
                                     <td align="center"><p>{{ $tobuy->memo }}</p></td>
-                                    <td><a href="/tobuys/{{ $tobuy->id }}/edit" class="bg-gray-400 hover:bg-gray-300 text-white rounded px-4 py-2 mx-20 flex">編集</a></td>
+                                    <td><a href="/tobuys/{{ $tobuy->id }}/edit" class="bg-gray-400 hover:bg-gray-300 text-white rounded px-4 py-2 ml-40 flex">編集</a></td>
                                 </tr>
                             </tbody>
                         </table>
                             <div class="footer flex items-center">
                                 <a href="/index" class="bg-gray-300 hover:bg-gray-200 text-black rounded px-4 py-2 my-2">戻る</a>
                             </div>
+                    </body>
                 </div>
             </div>
         </div>
     </div>
-                    </body>
     </x-app-layout>
 </html>
