@@ -21,22 +21,22 @@
                             @csrf
                             @method('PUT')
                             <div class="content_tobuy">
-                                <h2>tobuy</h2>
+                                <h2>tobuy*</h2>
                                 <input type='text' name='tobuy[tobuy]' value="{{ $tobuy->tobuy }}">
                                 <p class="tobuy__error" style="color:red">{{ $errors->first('tobuy.tobuy') }}</p>
                             </div>
                             <div class="content_deadline">
-                                <h2>期限</h2>
+                                <h2>期限*</h2>
                                 <input type='date' name='tobuy[deadline]' value="{{ $tobuy->deadline }}">
                                 <p class="deadline__error" style="color:red">{{ $errors->first('tobuy.deadline') }}</p>
                             </div>
                             <div class="content_count">
-                                <h2>個数</h2>
+                                <h2>個数*</h2>
                                 <input type="number" name="tobuy[count]" step="1" min="1" value="{{ $tobuy->count }}">
                                 <p class="count__error" style="color:red">{{ $errors->first('tobuy.count') }}</p>
                             </div>
                             <div class="content_group">
-                                <h2>グループ</h2>
+                                <h2>グループ*</h2>
                                 <select name="tobuy[group_id]">
                                     @foreach($my_groups as $group)
                                          <option value="{{ $group->id }}">{{ $group->name }}</option>
@@ -45,7 +45,12 @@
                             </div>
                             <div class="content_memo">
                                 <h2>メモ</h2>
-                                <textarea name="tobuy[memo]" value="{{ $tobuy->memo }}" placeholder="メモ"></textarea>
+                                <textarea id="memo" type="text" name="tobuy[memo]" value="{{ $tobuy->memo }}" placeholder="メモ" maxlength="30">{{ $tobuy->memo }}</textarea>
+                                <style>
+                                    #memo {
+                                        resize: none;
+                                    }
+                                </style>
                             </div>
                             <input class="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2" type="submit" value="更新">
                             <div class="footer flex items-center">
