@@ -45,7 +45,12 @@
                             </div>
                             <div class="content_memo">
                                 <h2>メモ</h2>
-                                <textarea name="tobuy[memo]" value="{{ $tobuy->memo }}" placeholder="メモ"></textarea>
+                                <textarea id="memo" name="tobuy[memo]" value="{{ $tobuy->memo }}" placeholder="メモ" maxlength="30"></textarea>
+                                <style>
+                                    #memo {
+                                        resize: none;
+                                    }
+                                </style>
                             </div>
                             <input class="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2" type="submit" value="更新">
                             <div class="footer flex items-center">
