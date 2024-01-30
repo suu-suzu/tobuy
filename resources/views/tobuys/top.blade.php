@@ -15,8 +15,8 @@
                     <body>
                         <div class="flex flex-col justify-between items-center space-y-4">
                             <h2>to buy</h2>
-                            <a href="/login" class="bg-blue-700 hover:bg-blue-600 text-center text-white rounded px-4 py-2">ログイン</a>
-                            <a href="/register" class="border-blue-500 hover:bg-blue-100 border font-semibold text-center text-blue-500 rounded px-2 py-2">新規登録</a>
+                                <a href="/login" class="bg-blue-700 hover:bg-blue-600 text-center text-white rounded px-4 py-2">ログイン</a>
+                                <a href="/register" class="border-blue-500 hover:bg-blue-100 border font-semibold text-center text-blue-500 rounded px-2 py-2">新規登録</a>
                         </div>
                     </body>
                 </div>

@@ -24,7 +24,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200 ">
-                            <ul class="list-disc overflow-y-scroll h-96" id="list_message">
+                            <ul class="list-disc overflow-y-scroll h-96 bg-blue-100" id="list_message">
                                 @foreach ($chats as $chat)
                                     <li>
                                         <strong>{{ $chat->user->name }}:</strong>
@@ -43,7 +43,7 @@
                                                 }
                                             </style>
                                         <input type="hidden" id="group_id" name="chat_id" value="{{ $group->id }}"> 
-                                        <button type="submit" class="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2">送信</button>
+                                        <button type="submit" id="submit" class="bg-blue-400 hover:bg-blue-300 text-white rounded px-4 py-2">送信</button>
                                     </div>
                                 </form>
                             </div>

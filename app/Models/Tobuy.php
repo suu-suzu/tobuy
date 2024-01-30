@@ -30,8 +30,8 @@ public function group()
 public function getMyGroupTobuy()
 {
     $myGroupIds = Auth::user()->groups()->wherePivot('application', 1)->pluck('id')->toArray();
-    $orderedTobys = $this->whereIn('group_id', $myGroupIds)->with('group')->orderBy('deadline', 'ASC')->paginate(5);
-    return $orderedTobys;
+    $orderedTobuys = $this->whereIn('group_id', $myGroupIds)->with('group')->orderBy('deadline', 'ASC')->paginate(5);
+    return $orderedTobuys;
 }
 
 protected $fillable = [

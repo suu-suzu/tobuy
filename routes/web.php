@@ -19,10 +19,6 @@ use App\Http\Controllers\GroupController;
 Route::view('/', 'tobuys.top');
 Route::view('/group/create', 'groups.create');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::controller(TobuyController::class)->middleware(['auth'])->group(function(){
     Route::get('/index','index')->name('index');
     Route::get('/tobuys/create', 'create');
@@ -43,9 +39,6 @@ Route::controller(GroupController::class)->middleware(['auth'])->group(function(
     Route::post('/group/permissionReject/{user}/{group}', 'reject');
     Route::delete('/group/{group}', 'delete');
 });
-
-
-// Route::get('/group', [GroupController::class,'index'])->name('group');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
